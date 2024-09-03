@@ -19,10 +19,10 @@ function addMessage() {
     document.getElementById('userSender').value = '';
 }
 
-// Function to start confetti animation
+// Function to start confetti animation (if you want to add this feature)
 function startConfetti() {
     // Add your confetti animation logic here
-    console.log('Confetti animation started!');
+    console.log('Confetti animation started!'); // Placeholder for actual animation code
 }
 
 // Function to start the photo slideshow
@@ -32,13 +32,13 @@ function showSlideshow() {
 
     function showNextSlide() {
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
+            slides[i].style.display = 'none'; // Hide all slides
         }
         slideIndex++;
         if (slideIndex > slides.length) {
             slideIndex = 1;
         }
-        slides[slideIndex - 1].style.display = 'block';
+        slides[slideIndex - 1].style.display = 'block'; // Show the next slide
         setTimeout(showNextSlide, 2000); // Change slide every 2 seconds
     }
 
