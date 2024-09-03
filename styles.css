@@ -4,37 +4,26 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    position: relative; /* Position the body for absolute positioning of the slideshow */
-}
-
-.background-overlay {
-    position: fixed; /* Keeps the background overlay fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly dark overlay to enhance readability */
-    z-index: 1; /* Layer the background below the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    position: relative; /* Position container on top of background */
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to make text readable */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2; /* Ensure content stays above the overlay */
 }
 
-h1, h2 {
+h2 {
     color: #ff4081;
     margin-bottom: 20px;
 }
 
 #message-form {
     margin-top: 20px;
-    z-index: 2; /* Ensure form stays above the overlay */
 }
 
 #message-form input {
@@ -54,7 +43,6 @@ h1, h2 {
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
-    z-index: 2; /* Ensure button stays above the overlay */
 }
 
 #message-form button:hover {
@@ -69,24 +57,26 @@ h1, h2 {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 2; /* Ensure messages stay above the overlay */
 }
 
 .slideshow-container {
-    position: fixed; /* Keeps the slideshow fixed in the background */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Place slideshow under the overlay */
+    width: 400px; /* Fixed width for slideshow */
+    height: 300px; /* Fixed height for slideshow */
+    position: relative; /* Position relative to handle absolute positioning of slides */
+    overflow: hidden; /* Hide overflow to ensure images don't spill out */
+    margin: 0 auto 20px auto; /* Center the slideshow and add bottom margin */
+    border-radius: 10px; /* Rounded corners for slideshow box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
 }
 
 .slide {
-    width: 100%; /* Adjust the width of the slides to fill the container */
-    height: 100vh; /* Keeps the aspect ratio of the images */
-    object-fit: cover; /* Ensures the image covers the entire container */
+    width: 100%; /* Fit image to the width of the container */
+    height: 100%; /* Fit image to the height of the container */
+    object-fit: cover; /* Ensures image covers the container while maintaining aspect ratio */
     display: none; /* Hide all slides by default */
-    position: absolute; /* Position slides absolutely for overlap */
+    position: absolute; /* Position absolutely for easy overlap */
+    top: 0;
+    left: 0;
 }
 
 /* Style for memory timeline, if any */
@@ -94,5 +84,4 @@ h1, h2 {
     margin-top: 20px;
     text-align: left;
     color: #333;
-    z-index: 2; /* Ensure timeline stays above the overlay */
 }
