@@ -1,10 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.jpeg');
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #000;
+    background-image: url('background.jpeg'); /* Make sure the background image file name matches */
+    background-size: contain; /* Ensures the entire image fits within the screen */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-color: #000; /* Adds a background color to fill gaps around the image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body {
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to make text readable */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -23,6 +23,7 @@ body {
 
 h1, h2 {
     color: #ff4081;
+    margin-bottom: 20px;
 }
 
 button {
@@ -50,27 +51,18 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .slide {
-    width: 300px;
-    height: auto;
+    width: 300px; /* Adjust the width of the slides */
+    height: auto; /* Keeps the aspect ratio of the images */
+    display: none; /* Hide all slides by default */
 }
 
-#cake {
-    position: relative;
+/* Style for memory timeline, if any */
+#timeline {
     margin-top: 20px;
-    max-width: 100px; /* Adjust the maximum width of the cake */
-}
-
-#cake img {
-    width: 100%; /* Makes the cake image responsive */
-    height: auto; /* Keeps the aspect ratio of the cake image */
-}
-
-.candle {
-    width: 20px; /* Adjust the width of the candles */
-    position: absolute;
-    top: -20px; /* Position the candles above the cake */
+    text-align: left;
+    color: #333;
 }
