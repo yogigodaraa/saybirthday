@@ -61,10 +61,16 @@ button:hover {
 #cake {
     position: relative;
     margin-top: 20px;
+    max-width: 300px; /* Adjust the maximum width of the cake */
+}
+
+#cake img {
+    width: 100%; /* Makes the cake image responsive */
+    height: auto; /* Keeps the aspect ratio of the cake image */
 }
 
 .candle {
-    width: 20px;
+    width: 40px; /* Adjust the width of the candles */
     position: absolute;
-    top: -10px;
+    top: -40px; /* Position the candles above the cake */
 }
