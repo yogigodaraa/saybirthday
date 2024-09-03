@@ -73,6 +73,7 @@ h2 {
     width: 100%; /* Fit image to the width of the container */
     height: 100%; /* Fit image to the height of the container */
     object-fit: cover; /* Ensures image covers the container while maintaining aspect ratio */
+    object-position: top; /* Prioritizes the top part of the image to be visible */
     display: none; /* Hide all slides by default */
     position: absolute; /* Position absolutely for easy overlap */
     top: 0;
