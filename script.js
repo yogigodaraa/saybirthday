@@ -5,30 +5,6 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('youtubeVideo');
 }
 
-// Function to start the countdown
-function startCountdown() {
-    let countdownElement = document.getElementById('countdown');
-    let messageElement = document.getElementById('message');
-    let timeLeft = 20; // 20 seconds countdown
-
-    countdownElement.textContent = `Countdown: ${timeLeft}`;
-    messageElement.textContent = '';
-
-    let countdownTimer = setInterval(() => {
-        timeLeft -= 1;
-        countdownElement.textContent = `Countdown: ${timeLeft}`;
-
-        if (timeLeft <= 0) {
-            clearInterval(countdownTimer);
-            countdownElement.textContent = '';
-            messageElement.textContent = "Happy Birthday, Saayella!";
-            playYouTubeVideo();
-            startConfetti();
-            showSlideshow();
-        }
-    }, 1000); // Update every second
-}
-
 // Function to play the YouTube video
 function playYouTubeVideo() {
     if (player && typeof player.playVideo === 'function') {
@@ -84,8 +60,10 @@ function setupInteractiveElements() {
     }
 }
 
-// Start the countdown automatically when the page loads
+// Initialize all features when the page loads
 window.onload = () => {
-    startCountdown();
+    playYouTubeVideo();
+    startConfetti();
+    showSlideshow();
     setupInteractiveElements();
 };
