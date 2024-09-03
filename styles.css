@@ -60,8 +60,8 @@ h2 {
 }
 
 .slideshow-container {
-    width: 1170px; /* Fixed width for slideshow */
-    height: 967px; /* Fixed height for slideshow */
+    width: 400px; /* Fixed width for slideshow */
+    height: 300px; /* Fixed height for slideshow */
     position: relative; /* Position relative to handle absolute positioning of slides */
     overflow: hidden; /* Hide overflow to ensure images don't spill out */
     margin: 0 auto 20px auto; /* Center the slideshow and add bottom margin */
@@ -70,8 +70,8 @@ h2 {
 }
 
 .slide {
-    width: 1170px; /* Force image to the width of the container */
-    height: 967px; /* Force image to the height of the container */
+    width: 100%; /* Fit image to the width of the container */
+    height: 100%; /* Fit image to the height of the container */
     object-fit: cover; /* Ensures image covers the container while maintaining aspect ratio */
     object-position: top; /* Prioritizes the top part of the image to be visible */
     display: none; /* Hide all slides by default */
