@@ -1,11 +1,22 @@
 // Function to add a personalized message
 function addMessage() {
-    const userMessage = document.getElementById('userMessage').value;
+    const userMessage = document.getElementById('userMessage').value.trim();
+    const userSender = document.getElementById('userSender').value.trim();
+
+    // Check if both fields are filled
+    if (userMessage === "" || userSender === "") {
+        alert("Please fill out both the message and your name.");
+        return;
+    }
+
     const messagesContainer = document.getElementById('messages');
     const newMessage = document.createElement('p');
-    newMessage.textContent = userMessage;
+    newMessage.innerHTML = `<strong>${userSender}:</strong> ${userMessage}`; // Display sender and message
     messagesContainer.appendChild(newMessage);
-    document.getElementById('userMessage').value = ''; // Clear input after submission
+
+    // Clear input fields after submission
+    document.getElementById('userMessage').value = '';
+    document.getElementById('userSender').value = '';
 }
 
 // Function to start confetti animation
