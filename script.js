@@ -1,19 +1,3 @@
-let player;
-
-// YouTube API will call this function when the video player is ready
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtubeVideo');
-}
-
-// Function to play the YouTube video
-function playYouTubeVideo() {
-    if (player && typeof player.playVideo === 'function') {
-        player.playVideo();
-    } else {
-        console.error('YouTube player is not ready.');
-    }
-}
-
 // Function to add a personalized message
 function addMessage() {
     const userMessage = document.getElementById('userMessage').value;
@@ -50,20 +34,8 @@ function showSlideshow() {
     showNextSlide();
 }
 
-// Function to handle interactive elements
-function setupInteractiveElements() {
-    const candles = document.getElementsByClassName('candle');
-    for (let candle of candles) {
-        candle.onclick = () => {
-            candle.style.display = 'none'; // Hide candle on click
-        };
-    }
-}
-
 // Initialize all features when the page loads
 window.onload = () => {
-    playYouTubeVideo();
     startConfetti();
     showSlideshow();
-    setupInteractiveElements();
 };
